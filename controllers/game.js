@@ -1,11 +1,11 @@
+var points = require('../lib/points'),
+    animals = require('../lib/animals'),
+    tiers = points.tiers;
+
 module.exports = function(req, res) {
     var data = {
-        animals: {
-            quokka: true,
-            panda: true,
-            condor: true
-        },
-        myPoints: 1000,
+        animals: animals.animals,
+        myPoints: points.getPoints(),
         providerIncentives: [
         {providerName: "Socal Edison", description: "Winter Wonder: 10% off your next billing period", requirements: "Set your heat to 68 or below"},
         {providerName: "Socal Edison", description: "Summer Saver: 10% off your next billing period", requirements: "Set your air conditioner to 78 or above"},
@@ -13,9 +13,9 @@ module.exports = function(req, res) {
         {providerName: "DWP", description: "15% off water bill next billing period", requirements: "Save laundry and dishwasher loads until non-peak hours"}
         ],
         rewardTiers: [
-        {animal: "panda", name: "Panda", img: "bamboo.png", description: "Bamboo is sure to lure the elusive giant panda", points: 200},
-        {animal: "condor", name: "condor", img: "meat.png", description: "Carrion is candy for condors.", points: 500},
-        {animal: "quokka", name: "Quokka", img: "grasses.png", description: "Grass will make the quokka go crackers." , points: 800}
+        {animal: "panda", name: "Panda", img: "bamboo.png", description: "Bamboo is sure to lure the elusive giant panda", points: tiers.panda},
+        {animal: "condor", name: "condor", img: "meat.png", description: "Carrion is candy for condors.", points: tiers.condor},
+        {animal: "quokka", name: "Quokka", img: "grasses.png", description: "Grass will make the quokka go crackers." , points: tiers.quokka}
         ],
         contests: [{description: "Win a night at the Wild Animal Park"}
         ]
