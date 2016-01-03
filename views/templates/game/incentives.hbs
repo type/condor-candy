@@ -1,0 +1,58 @@
+<div class="col-md-4">
+
+    <ul class="nav nav-tabls" role="tablist">
+        <li role="presentation" >
+        <a href="#provider" aria-controls="provider" role="tab" data-toggle="tab">Provider Incentives</a>
+        </li>
+        <li role="presentation" class="active">
+        <a href="#rewards" aria-controls="rewards" role="tab" data-toggle="tab">Wildlife Rewards</a>
+        </li>
+        <li role="presentation" >
+        <a href="#contests" aria-controls="contests" role="tab" data-toggle="tab">Contests</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active" id="rewards">
+            <h4>Rewards</h4>
+            {{#each rewardTiers}}
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/{{img}}" alt="{{animal}}" style="max-height: 100px; max-width: 150px; ">
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>{{description}}</li>
+                        <li>{{points}} points
+                        {{#compare @root.myPoints points operator=">="}}<button type="button" data-points={{points}} data-reward={{animal}} class="btn btn-primary">Redeem</button>{{/compare}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="provider">
+            <h4>Provider Incentives for your Area</h4>
+            {{#each providerIncentives}}
+            <ul>
+                <li>{{providerName}}</li>
+                <li>{{description}}</li>
+                <li>{{requirements}}</li>
+            </ul>
+            {{/each}}
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="contests">
+            <h4>Contests</h4>
+            {{#each contests}}
+            <ul>
+                <li>{{description}}</li>
+            </ul>
+            {{/each}}
+        </div>
+
+    </div>
+</div>

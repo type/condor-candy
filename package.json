@@ -1,0 +1,44 @@
+{
+  "name": "condorcandy",
+  "version": "1.0.0",
+  "description": "condor candy app",
+  "private": true,
+  "scripts": {
+    "test": "grunt",
+    "start": "node condorcandyapp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/type/condor-candy.git"
+  },
+  "dependencies": {
+    "async": "0.9.0",
+    "config": "1.0.2",
+    "express": "3.2.6",
+    "express-handlebars": "1.1.0",
+    "restify": "2.8.5",
+    "underscore": "1.7.0",
+    "underscore.string": "^3.0.3"
+  },
+  "devDependencies": {
+      "autoprefixer-core": "^5.2.0",
+      "csswring": "^3.0.5",
+      "grunt-bowercopy": "^1.2.0",
+      "grunt-cli": "^0.1.13",
+      "grunt-contrib-clean": "^0.6.0",
+      "grunt-contrib-copy": "^0.5.0",
+      "grunt-contrib-jshint": "^0.11.2",
+      "grunt-jsbeautifier": "^0.2.10",
+      "grunt-mocha-istanbul": "2.4.0",
+      "grunt-postcss": "^0.4.0",
+      "mocha": "1.13.0",
+      "should": "3.3.x",
+      "sinon": "1.9.0"
+  },
+  "author": "type",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/type/condor-candy/issues"
+  },
+  "homepage": "https://github.com/type/condor-candy"
+}
