@@ -8,15 +8,16 @@ var express = require('express'),
 
 var hbs = exphbs.create({
     helpers: viewHelpers,
-    defaultLayout: 'default',
+    extname: '.hbs',
+    defaultLayout: 'main',
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname + '/views'
 });
 
 
 viewHelpers.init(hbs.handlebars);
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine('hbs', hbs.engine);
+app.set('view engine', '.hbs');
 
 if (config.settings.viewCache) {
     app.enable('view cache');
@@ -34,12 +35,9 @@ app.use(express.bodyParser());
 });
 
 app.use(app.router);
-app.use(function(req, res) {
-    res.sendErrorPage(404);
-});
 
 exports.app = app;
 
 app.listen(config.settings.appPort, function() {
-    console.log("web3 listening on port", config.settings.appPort);
+    console.log("listening on port", config.settings.appPort);
 });

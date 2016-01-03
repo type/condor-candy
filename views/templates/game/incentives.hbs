@@ -1,0 +1,33 @@
+<div class="row">
+<div class="col-md-4">
+<h4>Provider Incentives</h4>
+<ul class="providerincentives">
+{{#each providerIncentives}}
+<li>
+<ul>
+    <li>{{providerName}}</li>
+    <li>{{description}}</li>
+</ul>
+</li>
+{{/each}}
+</ul>
+
+<h4>Rewards</h4>
+<ul class="rewardtiers">
+{{#each pointTiers}}
+<li>
+<img src="/img/" + {{animal}} + ".jpeg" alt="{{animal}}">
+<ul>
+    <li>{{animal}}</li>
+    <li{{description}}</li>
+    <li>{{points}} points</li>
+</ul>
+</li>
+{{/each}}
+</ul>
+
+<h4>Contests</h4>
+Enter to win a trip to the San Diego Wild Animal Park!
+
+</div>
+</div>
