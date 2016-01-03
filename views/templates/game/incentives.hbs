@@ -51,6 +51,11 @@
             <ul>
                 <li>{{description}}</li>
                 <li>{{requirements}}</li>
+                <li> 
+                {{#compare value "1" operator="=="}}<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>{{/compare}}
+                {{#compare value "0" operator="=="}}<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>{{/compare}}
+                {{#compare value "-1" operator="=="}}<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>{{/compare}}
+                </li>
             </ul>
             {{/each}}
         </div>
