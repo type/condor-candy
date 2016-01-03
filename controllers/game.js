@@ -10,7 +10,7 @@ module.exports = function(req, res) {
 
         var data = {
             animals: animals.animals,
-            myPoints: points.getPoints(),
+            myPoints: points.getPoints(rules),
             providerIncentives: [
             {providerName: "Socal Edison", description: "Winter Wonder: 10% off your next billing period", requirements: "Set your heat to 68 or below", value: rules.heatRule},
             {providerName: "Socal Edison", description: "Summer Saver: 10% off your next billing period", requirements: "Set your air conditioner to 78 or above", value: rules.acRule},
