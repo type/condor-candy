@@ -1,0 +1,20 @@
+<div class="row" id="sky">
+    {{! Flying critters go in the sky}}
+    <div class="col-md-12" id="condor">
+        {{#if animals.condor}}
+        <img src="/img/condor.png" alt="condor" class="base"><img src="/img/meat.png" alt="meat" class="pull-left" style="width: 100px">
+        {{/if}}
+    </div>
+</div>
+<div class="row" id="terra">
+    <div class="col-md-4" id="quokka">
+        {{#if animals.quokka}}
+        <img src="/img/quokka.png" alt="quokka" class="base" style="margin-top: -70px; width: 250px;"><img src="/img/grasses.png" alt="grasses" style="width: 200px; position: absolute; bottom: 0">
+        {{/if}}
+    </div>
+    <div class="col-md-4" id="panda">
+        {{#if animals.panda}}
+        <img src="/img/panda.png" alt="panda" class="base" style="margin-top: -30px; width: 400px;"><img src="/img/bamboo.png" alt="bamboo" class="pull-right" style="width: 200px; position: absolute; bottom:0; left: 160px;">
+        {{/if}}
+    </div>
+</div>
