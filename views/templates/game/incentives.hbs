@@ -16,6 +16,13 @@
 
         <div role="tabpanel" class="tab-pane active" id="rewards">
             <h4>Rewards</h4>
+            You currently have {{myPoints}} points. Earn 100 points every day that you stay eco-friendly by:
+            <ul>
+                <li><span class="bg-danger">Keeping the heat below 68</span></li>
+                <li><span class="bg-info">Keeping the AC above 78</span></li>
+                <li><span class="bg-success">Keeping the windows closed when you use the air conditioning or heat</span></li>
+                <li><span class="bg-warning">Wait until non-peak hours to do laundry</span></li>
+            </ul>
             {{#each rewardTiers}}
             <div class="row">
                 <div class="col-md-4">
@@ -25,7 +32,11 @@
                     <ul>
                         <li>{{description}}</li>
                         <li>{{points}} points
-                        {{#compare @root.myPoints points operator=">="}}<button type="button" data-points={{points}} data-reward={{animal}} class="btn btn-primary">Redeem</button>{{/compare}}
+                        {{#unless (lookup @root.animals animal)}}
+                        {{#compare @root.myPoints points operator=">="}}<button type="button" data-points={{points}} data-animal={{animal}} class="btn btn-primary">Add to eco park</button>{{/compare}}
+                        {{else}}
+                        <span class="bg-success">Already Purchased</span>
+                        {{/unless}}
                         </li>
                     </ul>
                 </div>
@@ -36,8 +47,8 @@
         <div role="tabpanel" class="tab-pane" id="provider">
             <h4>Provider Incentives for your Area</h4>
             {{#each providerIncentives}}
+            <h5>{{providerName}}</h5>
             <ul>
-                <li>{{providerName}}</li>
                 <li>{{description}}</li>
                 <li>{{requirements}}</li>
             </ul>

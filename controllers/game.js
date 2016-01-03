@@ -1,5 +1,10 @@
 module.exports = function(req, res) {
     var data = {
+        animals: {
+            quokka: true,
+            panda: true,
+            condor: true
+        },
         myPoints: 1000,
         providerIncentives: [
         {providerName: "Socal Edison", description: "Winter Wonder: 10% off your next billing period", requirements: "Set your heat to 68 or below"},
