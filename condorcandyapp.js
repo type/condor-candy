@@ -11,7 +11,7 @@ var hbs = exphbs.create({
     extname: '.hbs',
     defaultLayout: 'main',
     layoutsDir: __dirname + '/views/layouts',
-    partialsDir: __dirname + '/views'
+    partialsDir: __dirname + '/views/templates'
 });
 
 
@@ -22,8 +22,7 @@ app.set('view engine', '.hbs');
 if (config.settings.viewCache) {
     app.enable('view cache');
 }
-
-app.use(express.static(__dirname + config.settings.assetDirectory));
+app.use(express.static(__dirname + '/public'));
 
 app.use(express.limit(config.settings.maxRequestSize || '200kb'));
 app.use(express.methodOverride());
