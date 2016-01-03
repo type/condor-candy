@@ -32,11 +32,11 @@
                     <ul>
                         <li>{{description}}</li>
                         <li>{{points}} points
-                        {{#unless (lookup @root.animals animal)}}
-                        {{#compare @root.myPoints points operator=">="}}<button type="button" data-points={{points}} data-animal={{animal}} class="btn btn-primary">Add to eco park</button>{{/compare}}
-                        {{else}}
+                        {{#if (lookup @root.animals animal)}}
                         <span class="bg-success">Already Purchased</span>
-                        {{/unless}}
+                        {{else}}
+                        {{#compare @root.myPoints points operator=">="}}<button type="button" data-points={{points}} data-animal={{animal}} class="btn btn-primary redeem">Add to eco park</button>{{/compare}}
+                        {{/if}}
                         </li>
                     </ul>
                 </div>
